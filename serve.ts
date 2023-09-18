@@ -1,6 +1,6 @@
-import { bot } from "./config/index.ts"
+import { bot, instance } from "./config/index.ts"
 import { webhookCallback, serve } from "./deps.ts"
-import "https://deno.land/x/dotenv/load.ts";
+import "https://deno.land/std@0.201.0/dotenv/load.ts"
 
 
 const handle = webhookCallback(bot, "std/http");
@@ -33,7 +33,7 @@ const webhook = async () => {
             return new Response("Couldn't succeed with installing webhook");
           }
         default:
-          return Response.redirect("https://t.me/yuxiobot", 302);
+          return Response.redirect(`https://t.me/${instance.username}`, 302);
       }
     });
   };

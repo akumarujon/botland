@@ -1,1 +1,1 @@
-export { bot } from "./bot.ts"
+export { bot, instance } from "./bot.ts"
