@@ -9,9 +9,13 @@
 
 If you are using Linux, simply run:
 ```bash
-git clone https://github.com/akumarujon/botland
-cp -r ./botland/*
-rm -rf ./botland
+curl -s https://raw.githubusercontent.com/akumarujon/botland/main/install.sh > ~/install && chmod +x ~/install  
+// To download the init script.
+```
+
+and you can do:
+```bash
+install project_name
 ```
 
 #### Contributions are welcomed. Feel free to create issue whenever you have a problem.
