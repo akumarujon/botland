@@ -1,12 +1,12 @@
 import { bot, instance } from "./config/index.ts";
-import { serve, webhookCallback } from "./deps.ts";
+import { webhookCallback } from "./deps.ts";
 import "https://deno.land/std@0.201.0/dotenv/load.ts";
 
 const handle = webhookCallback(bot, "std/http");
 
 const webhook = async () => {
   await console.log("[INFO]", `bot is starting on ${Deno.env.get("HOST")}`);
-  await serve(async (req) => {
+  Deno.serve(async (req: Request) => {
     const url = new URL(req.url);
 
     if (req.method == "POST") {
